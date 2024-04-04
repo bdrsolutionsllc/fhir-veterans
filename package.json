@@ -1,0 +1,37 @@
+{
+  "name": "fhir-veterans",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && npm run compile && npm run copy-files",
+    "compile": "npx tsc && chmod +x ./build/bin/*",
+    "copy-files": "cp -R src/template build/template",
+    "clean": "rm -rf ./build",
+    "package": "npm run build && npm pack",
+    "test": "jest",
+    "test-watch": "nodemon --watch '{src,test}/**' --ext 'ts,md,json' --exec 'npx jest'"
+  },
+  "bin": {
+    "load-server": "build/bin/load-server.js"
+  },
+  "keywords": [
+    "fhir",
+    "r4"
+  ],
+  "author": "Preston Lee",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "commander": "^12.0.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.4",
+    "nodemon": "^3.1.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4"
+  }
+}

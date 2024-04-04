@@ -1,0 +1,5 @@
+exporter.fhir.export				= true
+exporter.fhir.use_us_core_ig		= true
+exporter.years_of_history			= 0
+exporter.baseDirectory				= src/data
+generate.default_population			= 10
